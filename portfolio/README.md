@@ -1,3 +1,3 @@
 # My portfolio
 
-My portfolio profesional...
+My portfolio profesional.
