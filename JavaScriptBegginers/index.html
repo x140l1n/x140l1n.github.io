@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/normalize.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Examples JavaScript</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand sticky-top navbar-light bg-primary">
+      <div class="container">
+        <a class="mx-auto navbar-brand text-light fw-bold overflow-hidden" href=".">
+          <img src="assets/img/js.png" alt="Me" width="50" />
+          JavaScript for beginners
+        </a>
+      </div>
+    </nav>
+  </header>
+  <div class="main container-lg p-5">
+    <div class="card h-100">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <b>Example JS</b>
+        <small>
+          <b>Author:</b> Xiaolin Jin Lin <img src="assets/img/me.png" width="30">
+        </small>
+      </div>
+      <div class="card-body h-100">
+        <div class="row h-100">
+          <div class="col-md-3 d-flex flex-column">
+            <ul class="list-group">
+              <li class="list-group-item active" aria-current="true"><a href="#variables"></a>Variables</a></li>
+              <li class="list-group-item"><a href="#operators">Operators</a></li>
+              <li class="list-group-item"><a href="#array">Array</a></li>
+              <li class="list-group-item"><a href="#objects">Objects</a></li>
+              <li class="list-group-item"><a href="#pai">Prototype and Inheritance</a></li>
+            </ul>
+            <div class="mt-auto mx-auto">
+               <a href="https://github.com/x140l1n" target="blank"><small class="me-2">Visit my github</small><img src="assets/img/github.png" width="30"/></a> 
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="tab-content h-100">
+              <div class="tab-pane fade show active h-100" id="variables">
+                <iframe width="100%" height="100%" src="//jsfiddle.net/x140l1n/4tL3gxuo/35/embedded/js,html,result/dark/"allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+              </div>
+              <div class="tab-pane fade h-100" id="operators">
+                <iframe width="100%" height="100%" src="//jsfiddle.net/x140l1n/8dgycajp/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+              </div>
+              <div class="tab-pane fade h-100" id="array">
+                <iframe width="100%" height="100%" src="//jsfiddle.net/x140l1n/gkd6y7ws/17/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+              </div>
+              <div class="tab-pane fade h-100" id="objects">
+                <iframe width="100%" height="100%" src="//jsfiddle.net/x140l1n/29rtnegf/27/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+              </div>
+              <div class="tab-pane fade h-100" id="pai">
+                <iframe width="100%" height="100%" src="//jsfiddle.net/x140l1n/yfng4e8t/59/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".list-group > li").click(function (e) {
+          $(".list-group > li").removeClass("active");
+          $(this).addClass("active");
+
+          $(".tab-pane").removeClass("show active");
+          let href = $(this).find("a").attr("href");
+          
+          $(`${href}`).toggleClass("show active");
+        });
+      });
+    </script>
+</body>
+
+</html>

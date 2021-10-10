@@ -1,0 +1,36 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(11, 8, 64, 1) 0%,
+    rgba(42, 42, 191, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-group > li {
+  border-radius: 0 !important;
+  cursor: pointer;
+}
+
+.list-group > li:not(.active):hover {
+  background-color: rgb(113, 153, 228) !important;
+  border-color: rgb(113, 153, 228) !important;
+  color: white;
+}
+
+.main {
+  height: calc(100% - 76px);
+}
