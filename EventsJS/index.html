@@ -5,8 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events in JS</title>
+    <style>
+        #table-task {
+            border-collapse: collapse;
+        }
+
+        #table-task td {
+            padding: 10px 50px;
+        }
+
+        #input-task {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
-<body onLoad="">
+<body onLoad="documentLoaded()">
+    <h4>Press "Control + Shift + J" to open the console.</h4>
+    <img src="http://www.skybondsor.com/wp-content/uploads/2011/08/click-me.png" width="100" onClick="handleClick(this)"/>
+    <button onClick="handleClick(this)">Click me!</button>
+
+    <hr/>
+
+    <h4>List of tasks</h4>
+    <input type="text" id="input-task" placeholder="Write here your task..."/>
+    <button id="button-add-task">Add task</button>
+    <table border="1" id="table-task">
+        <tbody>
+        </tbody>
+    </table>
+<script>
+    //When document is loaded.
+    function documentLoaded() {
+        console.log("Document loaded.");
     
+        //This event fires when the window has received focus.
+        window.addEventListener("focus", function () {
+            console.log("Window has received focus.");
+        });
+
+        //Add new task to table when the button has clicked.
+        document.querySelector("#button-add-task").addEventListener("click", addTask);
+
+        //Add click listener on table task.
+        document.querySelector("#table-task").addEventListener("click", function (e) {
+            //Propagation event.
+            
+            //Get the clicked element. 
+            let target = e.target;
+
+            //Check what action to take.
+            if (target.dataset.action === "delete-task") {
+                //Remove the row element.
+                target.closest("tr").remove();
+            }
+        });
+    }
+
+    function addTask() {
+        let input_task = document.querySelector("#input-task");
+        let table = document.querySelector("#table-task");
+
+        let task = input_task.value;
+
+        if (task.length !== 0) {
+            let row = table.tBodies[0].insertRow();
+            let cell_task = row.insertCell();
+            let cell_button = row.insertCell();
+
+            cell_task.innerText = task;
+            cell_button.innerHTML = "<button data-action='delete-task'>Delete</button>";
+
+            input_task.value = "";
+        }
+    }
+
+    function handleClick(e) {
+        console.log(`Clicked on ${e.tagName}.`);
+    }
+</script>
 </body>
 </html>
