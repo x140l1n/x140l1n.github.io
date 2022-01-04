@@ -33,6 +33,16 @@
         <tbody>
         </tbody>
     </table>
+
+    <hr/>
+
+    <h4>setInterval</h4>
+    <p>Boom in...</p>
+    <p id="countdown">3</p>
+
+    <h4>setTimeout</h4>
+    <p>Wait 3 seconds for BOOM!</p>
+    <p id="boom"></p>
 <script>
     //When document is loaded.
     function documentLoaded() {
@@ -59,6 +69,26 @@
                 target.closest("tr").remove();
             }
         });
+
+        let countdown = 3;
+        let countdown_element = document.querySelector("#countdown");
+
+        //Show countdown every 1000ms (1s).
+        let interval_id = setInterval(() => {
+            countdown--;
+
+            if (countdown === 0) {
+                //Clear interval when countdown is less than 0.
+                clearInterval(interval_id);
+                countdown_element.innerText = "BOOM!";
+            } else {
+                countdown_element.innerText = countdown;
+            }
+        }, 1000);
+
+        setTimeout(() => {
+            document.querySelector("#boom").innerText = "BOOM!";
+        }, 3000);
     }
 
     function addTask() {
